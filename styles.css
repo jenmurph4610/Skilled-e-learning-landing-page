@@ -4,16 +4,20 @@ body {
     font-weight: 500;
 
 }
-/*The following button styles apply to both mobile and tablet layouts*/
+
+/***Button styling***/
+
+    /*Mobile/tablet specific styling*/
 .shared-button-shape {
     text-decoration: none;
     border-radius: 28px;
     color: white;
-    padding: 10px 24px;
     font-size: 16px;
     font-weight: 700;
     width: 140px;
-    height: 48px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
 }
 
 .header-button-color {
@@ -36,14 +40,13 @@ body {
     height: 56px;
 }
 
-
-/*Desktop specific styling*/
+    /*Desktop specific styling*/
 @media only screen and (min-width: 1025px) {
     .shared-button-shape {
-        padding: 14px 32px;
+        padding-top: 14px;
+        padding-bottom: 14px;
         font-size: 18px;
         width: 167px;
-        height: 56px;
     }
     
     .middle-button {
@@ -51,7 +54,27 @@ body {
     }
   }
 
+/***end of button styling***/
 
-  footer {
+
+/***Header and footer styling - similar except padding and background color**/
+header, footer {
+    display: flex;
+    justify-content: space-between;
+    min-width: 300px;
+}
+
+header img, footer img {
+    align-self: center;
+}
+
+header {
+    padding: 16px;
+}
+
+footer {
+    padding: 36px 16px;
     background-color: #13183f;
 }
+
+/***End of header and footer styling***/
