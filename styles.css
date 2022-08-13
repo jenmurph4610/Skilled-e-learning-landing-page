@@ -4,62 +4,8 @@ body {
     font-weight: 500;
 }
 
-main { min-width: 350px;}
-/***Button styling***/
+/*-------------------*/
 
-    /*Mobile/tablet specific styling*/
-.shared-button-shape {
-    text-decoration: none;
-    border-radius: 28px;
-    color: white;
-    font-size: 16px;
-    font-weight: 700;
-    width: 140px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    text-align: center;
-}
-
-.header-button-color {
-    background-color: #13183f;
-}
-
-.footer-button-color {
-    background-image: linear-gradient(#4851FF, #F02AA6);
-}
-
-.middle-button {
-    text-decoration: none;
-    border-radius: 31.5px;
-    background-image: linear-gradient(#FF6F48, #F02AA6);
-    color: white;
-    font-size: 16px;
-    font-weight: 700;
-    width: 167px;
-    text-align: center;
-    padding-top: 19px;
-    padding-bottom: 19px;
-
-}
-
-    /*Desktop specific styling*/
-@media only screen and (min-width: 1025px) {
-    .shared-button-shape {
-        padding-top: 14px;
-        padding-bottom: 14px;
-        font-size: 18px;
-        width: 167px;
-    }
-    
-    .middle-button {
-        font-size: 18px;
-    }
-  }
-
-/***end of button styling***/
-
-
-/***Header and footer styling - similar except padding and background color**/
 header, footer {
     display: flex;
     justify-content: space-between;
@@ -79,15 +25,55 @@ footer {
     background-color: #13183f;
 }
 
-/***End of header and footer styling***/
+/*-------------------*/
 
-/***Hero section***/
+.header-button {
+    text-decoration: none;
+    border-radius: 28px;
+    color: white;
+    font-size: 16px;
+    font-weight: 700;
+    width: 140px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+    background-color: #13183f;
+}
+
+.main-button {
+    display: block;
+    text-decoration: none;
+    border-radius: 31.5px;
+    background-image: linear-gradient(#FF6F48, #F02AA6);
+    color: white;
+    font-size: 16px;
+    font-weight: 700;
+    width: 167px;
+    text-align: center;
+    padding-top: 19px;
+    padding-bottom: 19px;
+}
+
+.footer-button {
+    text-decoration: none;
+    border-radius: 28px;
+    color: white;
+    font-size: 16px;
+    font-weight: 700;
+    width: 140px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+    background-image: linear-gradient(#4851FF, #F02AA6);
+}
+
+/*--------Hero Section-----------*/
+
 .hero {
     display: flex;
     flex-direction: column;
     padding-left: 16px;
     padding-right: 16px;
-    margin-bottom: 40px;
 }
 
 .hero img  {
@@ -110,46 +96,57 @@ footer {
     margin-top: 26px;
     margin-bottom: 24px;
 }
-/***End of hero section***/
 
-/***Card section***/
+/*Tablet*/
+@media only screen and (min-width: 451px) and (max-width: 1024px) {
+    .hero {
+        padding-left: 39px;
+        margin-bottom: 210px;
+    }
+    .hero div {
+        width: 50%;
+    }
+    .hero img {
+        position: absolute;
+        width: 640px;
+        top: -80px;
+        right: -275px;
+    }
+}
+
+/*---------Card Properties----------*/
+
 .card-section {
-    display: flex;
-    flex-direction: column;
-    background-image: linear-gradient(#FFFFFF, #F0F1FF);
-    padding-left: 16px;
-    padding-right: 16px;
-    gap: 40px;
+    display: grid;
+    background-image: linear-gradient(#FFFFFF, #F0F1FF);    
     padding-bottom: 80px;
+ 
 }
 
 aside {
+    position: relative;
+
     background-image: linear-gradient(#FF6F48, #F02AA6);
     border-radius: 10px;
-    padding-left: 28px;
-    padding-right: 28px;
-    /*margin-bottom: 16px;*/
-
-}
-aside h2 {
     color: white;
+}
+
+aside h2 {
+    margin: 0;
     font-size: 24px;
     font-weight: 800;
     line-height: 32px;
 }
-
 .card-container {
+    position: relative;
+
     background-color: white;
     border-radius: 10px;
     color: #83869a;
     font-size: 16px;
-    padding-left: 28px;
-    padding-right: 28px;
-    padding-bottom: 32px;
-    position: relative;
 
+    padding: 56px 28px 32px 28px;
 }
-
 .card-container img {
     position: absolute;
     top: -24px;
@@ -159,12 +156,94 @@ aside h2 {
     color: #13183f;
     font-size: 20px;
     font-weight: 800;
-    margin-top: 56px;  
+    margin-bottom: 0;
+}
+
+.card-container p {
+    margin-top: 16px;
+    margin-bottom: 24px;
+    line-height: 26px;
+
 }
 .card-container a {
     color: #f74780;
+    font-size: 18px;
     font-weight: 700;
     line-height: 28px;
     text-decoration: none;
+    margin-top: 0;
 }
-/***End of card section***/
+
+/*--------Grid Area Assignments-----------*/
+.card-one {
+    grid-area: grid-one;
+}
+.card-two {
+    grid-area: grid-two;
+}
+.card-three {
+    grid-area: grid-three;
+}
+.card-four {
+    grid-area: grid-four;
+}
+.card-five {
+    grid-area: grid-five;
+}
+.card-six {
+    grid-area: grid-six;
+}
+/*Mobile*/
+@media only screen and (max-width: 450px) {
+    .card-section {
+        padding-left: 16px;
+        padding-right: 16px;  
+        grid-template-columns: 1fr;
+        grid-template-rows: 120px repeat(5, 1fr);
+        grid-row-gap: 40px;
+        grid-template-areas: 
+            "grid-one" 
+            "grid-two" 
+            "grid-three" 
+            "grid-four" 
+            "grid-five" 
+            "grid-six";
+    }
+    aside {
+        padding: 24px 29px 32px 29px; 
+    }
+}
+
+/*Tablet*/
+@media only screen and (min-width: 451px) and (max-width: 1024px) {
+    .card-section {
+        padding-left: 40px;
+        padding-right: 40px;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        grid-column-gap: 11px;
+        grid-row-gap: 56px;
+        grid-template-areas: 
+            "grid-one grid-two" 
+            "grid-three grid-four" 
+            "grid-five grid-six";
+    }
+    aside {
+        padding: 56px 32px 139px 21px; 
+    }
+}
+/*Desktop*/
+@media only screen and (min-width: 1025px) {
+    .card-section {
+        padding-left: 40px;
+        padding-right: 40px;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        grid-row-gap: 40px;
+        grid-template-areas: 
+            "grid-one grid-two grid-three"
+            "grid-four grid-five grid-six";    
+    }
+}
+
+/*------------------------------*/
