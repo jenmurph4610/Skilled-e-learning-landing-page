@@ -2,9 +2,9 @@ body {
     font-family: 'Plus Jakarta Sans', sans-serif;
     font-size: 18px;
     font-weight: 500;
-
 }
 
+main { min-width: 350px;}
 /***Button styling***/
 
     /*Mobile/tablet specific styling*/
@@ -31,13 +31,15 @@ body {
 .middle-button {
     text-decoration: none;
     border-radius: 31.5px;
-    padding: 15px 38px;
-    background-image: linear-gradient(#F02AA6, #FF6F48);
+    background-image: linear-gradient(#FF6F48, #F02AA6);
     color: white;
     font-size: 16px;
     font-weight: 700;
     width: 167px;
-    height: 56px;
+    text-align: center;
+    padding-top: 19px;
+    padding-bottom: 19px;
+
 }
 
     /*Desktop specific styling*/
@@ -78,3 +80,91 @@ footer {
 }
 
 /***End of header and footer styling***/
+
+/***Hero section***/
+.hero {
+    display: flex;
+    flex-direction: column;
+    padding-left: 16px;
+    padding-right: 16px;
+    margin-bottom: 40px;
+}
+
+.hero img  {
+    width: 100%;
+}
+.hero h1 {
+    color: #13183f;
+    font-size: 40px;
+    font-weight: 800;
+    line-height: 50.5px;
+    margin-top: 38px;
+    margin-bottom: 0;
+    min-width: 350px;
+}
+
+.hero p {
+    color: #83869a;
+    font-size: 16px;
+    line-height: 26px;
+    margin-top: 26px;
+    margin-bottom: 24px;
+}
+/***End of hero section***/
+
+/***Card section***/
+.card-section {
+    display: flex;
+    flex-direction: column;
+    background-image: linear-gradient(#FFFFFF, #F0F1FF);
+    padding-left: 16px;
+    padding-right: 16px;
+    gap: 40px;
+    padding-bottom: 80px;
+}
+
+aside {
+    background-image: linear-gradient(#FF6F48, #F02AA6);
+    border-radius: 10px;
+    padding-left: 28px;
+    padding-right: 28px;
+    /*margin-bottom: 16px;*/
+
+}
+aside h2 {
+    color: white;
+    font-size: 24px;
+    font-weight: 800;
+    line-height: 32px;
+}
+
+.card-container {
+    background-color: white;
+    border-radius: 10px;
+    color: #83869a;
+    font-size: 16px;
+    padding-left: 28px;
+    padding-right: 28px;
+    padding-bottom: 32px;
+    position: relative;
+
+}
+
+.card-container img {
+    position: absolute;
+    top: -24px;
+}
+
+.card-container h3 {
+    color: #13183f;
+    font-size: 20px;
+    font-weight: 800;
+    margin-top: 56px;  
+}
+.card-container a {
+    color: #f74780;
+    font-weight: 700;
+    line-height: 28px;
+    text-decoration: none;
+}
+/***End of card section***/
