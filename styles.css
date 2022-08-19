@@ -3,13 +3,17 @@ body {
     font-size: 18px;
     font-weight: 500;
 }
+main {
+    z-index: 1;
+}
 
-/*-------------------*/
-
+/*--------Header & Footer Section-----------*/
 header, footer {
     display: flex;
     justify-content: space-between;
     min-width: 300px;
+    z-index: 2;
+    position: relative;
 }
 
 header img, footer img {
@@ -25,7 +29,22 @@ footer {
     background-color: #13183f;
 }
 
-/*-------------------*/
+    /*Desktop*/
+@media only screen and (min-width: 1200px) {
+
+    header {
+        padding-top: 24px;
+        padding-bottom: 24px;
+        padding-left: 40px;
+        padding-right: 40px;
+
+    }
+    footer {
+        padding: 32px 165px;
+    }
+}
+
+/*--------Button Section-----------*/
 
 .header-button {
     text-decoration: none;
@@ -38,6 +57,9 @@ footer {
     padding-bottom: 10px;
     text-align: center;
     background-color: #13183f;
+}
+.header-button:hover {
+    background-color: #666CA3;
 }
 
 .main-button {
@@ -53,6 +75,9 @@ footer {
     padding-top: 19px;
     padding-bottom: 19px;
 }
+.main-button:hover {
+    background-image: linear-gradient(0deg, hsla(0deg, 0%, 100%, 0.5), hsla(0deg, 0%, 100%, 0.5)), linear-gradient(to bottom, hsl(13deg, 100%, 64%), hsl(322deg, 87%, 55%));
+}
 
 .footer-button {
     text-decoration: none;
@@ -66,14 +91,18 @@ footer {
     text-align: center;
     background-image: linear-gradient(#4851FF, #F02AA6);
 }
+.footer-button:hover {
+    background-image: linear-gradient(0deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), linear-gradient(180deg, #4851ff -54.32%, #f02aa6 100%);
+}
 
 /*--------Hero Section-----------*/
 
 .hero {
-    display: flex;
-    flex-direction: column;
     padding-left: 16px;
     padding-right: 16px;
+    width: 340px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .hero img  {
@@ -97,35 +126,58 @@ footer {
     margin-bottom: 24px;
 }
 
-/*Tablet*/
-@media only screen and (min-width: 451px) and (max-width: 1024px) {
+    /*Tablet*/
+@media only screen and (min-width: 721px) and (max-width: 1199px) {
     .hero {
-        padding-left: 39px;
         margin-bottom: 210px;
+        width: 691px;
+        display: flex;  
     }
-    .hero div {
+    .hero-info {
         width: 50%;
     }
-    .hero img {
+    .hero img  {
         position: absolute;
-        width: 640px;
-        top: -80px;
-        right: -275px;
+        top: -90px;
+        right: -250px;
+        width: 670px;
+    }
+}
+    /*Desktop*/
+@media only screen and (min-width: 1200px) {
+    .hero {
+        margin-bottom: 226px;
+        width: 1110px;
+        display: flex;
+        margin-top: 175px;  
+    
+    }
+    .hero-info {
+        width: 50%;
+    }
+    .hero img  {
+        position: absolute;
+        top: -150px;
+        right: -335px;
+        width: 991px;
     }
 }
 
-/*---------Card Properties----------*/
-
+/*---------Card Section----------*/
+.card-section-container {
+    display: flex;
+    background-image: linear-gradient(#FFFFFF, #F0F1FF);    
+    width: 100%;
+}
 .card-section {
     display: grid;
-    background-image: linear-gradient(#FFFFFF, #F0F1FF);    
     padding-bottom: 80px;
- 
+    margin-left: auto;
+    margin-right: auto;
 }
 
 aside {
     position: relative;
-
     background-image: linear-gradient(#FF6F48, #F02AA6);
     border-radius: 10px;
     color: white;
@@ -139,12 +191,10 @@ aside h2 {
 }
 .card-container {
     position: relative;
-
     background-color: white;
     border-radius: 10px;
     color: #83869a;
     font-size: 16px;
-
     padding: 56px 28px 32px 28px;
 }
 .card-container img {
@@ -173,6 +223,9 @@ aside h2 {
     text-decoration: none;
     margin-top: 0;
 }
+.card-container a:hover {
+    color: #FFA7C3;
+}
 
 /*--------Grid Area Assignments-----------*/
 .card-one {
@@ -193,11 +246,11 @@ aside h2 {
 .card-six {
     grid-area: grid-six;
 }
-/*Mobile*/
-@media only screen and (max-width: 450px) {
+    /*Mobile*/
+@media only screen and (max-width: 720px) {
     .card-section {
         padding-left: 16px;
-        padding-right: 16px;  
+        padding-right: 16px;
         grid-template-columns: 1fr;
         grid-template-rows: 120px repeat(5, 1fr);
         grid-row-gap: 40px;
@@ -208,15 +261,18 @@ aside h2 {
             "grid-four" 
             "grid-five" 
             "grid-six";
+
+        width: 340px
     }
     aside {
         padding: 24px 29px 32px 29px; 
     }
 }
 
-/*Tablet*/
-@media only screen and (min-width: 451px) and (max-width: 1024px) {
+    /*Tablet*/
+@media only screen and (min-width: 721px) and (max-width: 1199px) {
     .card-section {
+        padding-bottom: 86px;
         padding-left: 40px;
         padding-right: 40px;
         grid-template-columns: repeat(2, 1fr);
@@ -227,23 +283,50 @@ aside h2 {
             "grid-one grid-two" 
             "grid-three grid-four" 
             "grid-five grid-six";
+
+        width: 691px
     }
     aside {
         padding: 56px 32px 139px 21px; 
     }
 }
-/*Desktop*/
-@media only screen and (min-width: 1025px) {
+    /*Desktop*/
+@media only screen and (min-width: 1200px) {
     .card-section {
-        padding-left: 40px;
-        padding-right: 40px;
+        padding-bottom: 140px;
+        padding-left: 20px;
+        padding-right: 20px;
         grid-template-columns: repeat(3, 1fr);
         grid-template-rows: repeat(2, 1fr);
-        grid-row-gap: 40px;
+        grid-column-gap: 30px;
+        grid-row-gap: 80px;
         grid-template-areas: 
             "grid-one grid-two grid-three"
-            "grid-four grid-five grid-six";    
+            "grid-four grid-five grid-six";
+        
+        width: 1110px
+    }
+    .card-container {
+        padding: 65px 32px 40px 32px; 
+    }
+    .card-container h3 {
+        color: #13183f;
+        font-size: 24px;
+        font-weight: 800;
+        margin-bottom: 0;
+    }
+    .card-container p {
+        margin-top: 24px;
+        margin-bottom: 24px;
+        line-height: 28px;
+    
+    }
+    aside {
+        padding: 64px 32px 138px 32px; 
+    }
+    aside h2 {
+        font-size: 32px;
+        font-weight: 800;
+        line-height: 40px;
     }
 }
-
-/*------------------------------*/
